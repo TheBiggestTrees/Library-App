@@ -10,26 +10,27 @@
 
 <dialog>
     
-    <label for="titleInput">Title:
-        <input type="text" name="title" id="titleInput" method="dialog">
-    </label>
-
-    <label for="authorInput">Author:
-        <input type="text" name="author" id="authorInput" method="dialog">
-    </label>
+    <div class="inputBox">
+        <label for="titleInput">Title:
+            <input type="text" name="title" id="titleInput" method="dialog">
+        </label>
+        <label for="authorInput">Author:
+            <input type="text" name="author" id="authorInput" method="dialog">
+        </label>
+        
+        <label for="pagesInput">Pages:
+            <input type="number" name="pages" id="pagesInput" method="dialog">
+        </label>
+        <label for="isReadInput">Have you read this?
+            <input type="checkbox" name="isRead" id="isReadInput" method="dialog">
+        </label>
+        
+        <div class="inputButtons">
+            <button id="bookAdd" type="submit" class="addBookBtn" method="dialog">ADD</button>
+            <button id="closeModal" method="dialog">Cancel</button>
+        </div>
+    </div>
     
-    <label for="pagesInput">Pages:
-        <input type="number" name="pages" id="pagesInput" method="dialog">
-    </label>
-
-    <label for="isReadInput">Have you read this?
-        <input type="checkbox" name="isRead" id="isReadInput" method="dialog">
-    </label>
-
-    <button type="submit" class="addBookBtn" method="dialog">Add Book</button>
-    
-    <button id="closeModal" method="dialog">Cancel</button>
-
 </dialog>
 
 <body>
@@ -43,14 +44,6 @@
             <div class="library">
                 <h1>Library</h1>
             </div>
-            <div class="bookCard">
-                <p class="title">Title</p>
-                <p class="author">Author</p>
-                <p class="pages">000</p>
-                <button type="button" class="isRead">READ</button>
-            </div>
-
-            
         </div>
     </div>
 </body>

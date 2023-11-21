@@ -3,11 +3,14 @@
     src: url('./Ubuntu-Regular.ttf');
 }
 
+* {
+    font-family: ubuntu;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: #dee7e2;
-    font-family: ubuntu;
 }
 
 .container {
@@ -20,6 +23,85 @@ body {
     background-color: #237847;
     grid-template-columns: 1fr 1fr;
     padding: 0px 15px;
+}
+
+dialog {
+    border: none !important;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px black;
+    background-color: whitesmoke;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+label {
+    letter-spacing: .05rem;
+    font-size: larger;
+}
+
+#titleInput {
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#authorInput {
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#pagesInput {
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#isReadInput {
+    width: 20px;
+    height: 20px;
+}
+
+.inputButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.addBookBtn {
+    height: 30px;
+    width: 95%;
+    background-color: #237847;
+    color: white;
+    font-size: large;
+    border: none;
+    border-radius: 10px;
+}
+
+.addBookBtn:hover {
+    width: 96%;
+    height: 32px;
+    border: 1px solid rgb(0, 0, 0);
+    transition: all 1s ease;
+}
+
+#closeModal {
+    width: 95%;
+    height: 30px;
+    background-color: #b8b8b8;
+    color: white;
+    font-size: large;
+    border: none;
+    border-radius: 10px;
+}
+
+#closeModal:hover {
+    width: 96%;
+    height: 32px;
+    border: 1px solid rgb(0, 0, 0);
+    transition: all 1s ease;
 }
 
 .appTitle {
@@ -67,13 +149,15 @@ h1 {
     padding: 15px;
 }
 
-.title {
+.name {
+    grid-column: 1 / 5;
     grid-row: 1 / 2;
     font-size: 20px;
     font-weight: 300;
 }
 
 .author {
+    grid-column: 1 / 5;
     grid-row: 2 / 3;
     margin-top: 0;
     color: rgb(77, 77, 77);
