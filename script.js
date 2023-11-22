@@ -20,41 +20,10 @@ function Book(name, author, pages, readStatus) {
     this.readStatus = readStatus;
 }
 
-//Shows Library on page
-// function showLibrary() {
-//         myLibrary.map((book, id) => {
-        
-//         const bookCard = document.createElement('div');
-//         bookCard.classList = 'bookCard';
-        
-//         function getReadStatus() {
-//             if(book.readStatus === true) {
-//                 return 'READ'
-//             } else {
-//                 return 'NOT READ YET'
-//             }
-//         }
-        
-//         const content = `
-//             <p class="name">${book.name}</p>
-//             <p class="author">${book.author}</p>
-//             <p class="pages">${book.pages}</p>
-//             <button type="button" id="btn-${id}" class="isRead">${getReadStatus()}</button>
-//         `;
-
-//         bookCard.innerHTML += content;
-
-//         mainContent.appendChild(bookCard)
-//     })
-// }
-
-// showLibrary();
-
 function setButtonRead(book) {
     const btnIsRead = document.getElementById(`btn-${myLibrary.indexOf(book)}`);
-    console.log(btnIsRead)
+
     btnIsRead.addEventListener("click", () => {
-        console.log(book.readStatus);
         if(book.readStatus == true) {
             btnIsRead.innerHTML = "READ";
             book.readStatus = false;
@@ -99,6 +68,11 @@ const addBookToLibrary = () => {
     mainContent.appendChild(bookCard);
 
     setButtonRead(newBook);
+
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    isReadInput.checked = false;
 }
 
 addButton.addEventListener("click", () => {
