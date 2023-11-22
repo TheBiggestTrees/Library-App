@@ -41,6 +41,10 @@ const addBookToLibrary = () => {
     const pages = pagesInput.value;
     const isRead = isReadInput.checked;
 
+    if (!name || !author || !pages) {
+        return console.log("Enter Stuff")
+    } 
+
     const newBook = new Book(name, author, pages, isRead);
     
     myLibrary.push(newBook);
@@ -69,10 +73,13 @@ const addBookToLibrary = () => {
 
     setButtonRead(newBook);
 
+    dialog.close();
+
     titleInput.value = "";
     authorInput.value = "";
     pagesInput.value = "";
     isReadInput.checked = false;
+
 }
 
 addButton.addEventListener("click", () => {
@@ -85,7 +92,6 @@ cancelButton.addEventListener("click", () => {
 
 bookAddBtn.addEventListener("click", () => {
     addBookToLibrary();
-    dialog.close();
 })
 
 
