@@ -85,7 +85,7 @@ const addBookToLibrary = () => {
 
     setButtonRead(newBook);
     setDelBtn(newBook);
-    console.log(myLibrary);
+
     dialog.close();
 
     titleInput.value = "";
