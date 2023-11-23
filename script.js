@@ -34,6 +34,16 @@ function setButtonRead(book) {
     })
 }
 
+function setDelBtn(book) {
+    const delBtn = document.getElementById(`closeBtn-${myLibrary.indexOf(book)}`);
+
+    const bookCard = document.getElementById(`book-${myLibrary.indexOf(book)}`)
+    delBtn.addEventListener("click", () => {
+        bookCard.remove();
+        myLibrary.splice(`${myLibrary.indexOf(book)}`, 1);
+    })
+}
+
 const addBookToLibrary = () => {
     // do stuff here
     const name = titleInput.value;
@@ -51,6 +61,7 @@ const addBookToLibrary = () => {
 
     const bookCard = document.createElement('div');
     bookCard.classList = 'bookCard';
+    bookCard.setAttribute('id',`book-${myLibrary.indexOf(newBook)}`);
     
     function getReadStatus() {
         if(newBook.readStatus === true) {
@@ -61,6 +72,7 @@ const addBookToLibrary = () => {
     }
     
     const content = `
+        <img class="closeBtn" id="closeBtn-${myLibrary.indexOf(newBook)}" src="./close.png" alt="close">
         <p class="name">${newBook.name}</p>
         <p class="author">${newBook.author}</p>
         <p class="pages">${newBook.pages}</p>
@@ -72,7 +84,8 @@ const addBookToLibrary = () => {
     mainContent.appendChild(bookCard);
 
     setButtonRead(newBook);
-
+    setDelBtn(newBook);
+    console.log(myLibrary);
     dialog.close();
 
     titleInput.value = "";

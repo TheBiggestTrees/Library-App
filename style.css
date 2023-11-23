@@ -160,6 +160,22 @@ h1 {
     padding: 15px;
 }
 
+.closeBtn {
+    grid-area: 1 / 4 / 2 / 5;
+    align-self: start;
+    justify-self: end;
+}
+
+.closeBtn:hover {
+    width:auto;
+    height: 1.65rem;
+}
+
+.closeBtn:active {
+    width: auto;
+    height: 1.8rem;
+}
+
 .name {
     grid-column: 1 / 5;
     grid-row: 1 / 2;
